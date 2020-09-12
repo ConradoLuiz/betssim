@@ -1,0 +1,11 @@
+.betStrat {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.betStrat main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

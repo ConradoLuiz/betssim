@@ -1,0 +1,12 @@
+<header>
+  <a routerLink="/">
+    <img src="assets/logo.svg" alt="" />
+  </a>
+  <h2>{{ this.strategy.name }}</h2>
+  <div>
+    Balance:
+    <h3>
+      {{ this.strategy.balance | currency }}
+    </h3>
+  </div>
+</header>

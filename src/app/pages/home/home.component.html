@@ -1,0 +1,28 @@
+<div class="home">
+  <header>
+    <img src="assets/logo.svg" alt="betSim" />
+  </header>
+
+  <main>
+    <h2>Strategies</h2>
+    <div class="cards">
+      <p-card
+        *ngFor="let s of strategies"
+        header="{{ s.name }}"
+        (click)="cardClick(s.id)"
+        class="card"
+      >
+        <div>
+          <h3>{{ s.startingBalance | currency }}</h3>
+          ->
+          <h3 class="balance">
+            {{ s.balance | currency }}
+          </h3>
+        </div>
+        <h3>
+          {{ (s.balance / s.startingBalance - 1) * 100 | percent }}
+        </h3>
+      </p-card>
+    </div>
+  </main>
+</div>
