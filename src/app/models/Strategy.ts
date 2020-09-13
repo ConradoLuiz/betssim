@@ -1,6 +1,6 @@
 export class Strategy {
-  id: String;
-  name: String;
-  balance: Number;
-  startingBalance: Number;
+  id: string;
+  name: string;
+  balance: number;
+  startingBalance: number;
 }

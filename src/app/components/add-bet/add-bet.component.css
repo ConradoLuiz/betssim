@@ -1,0 +1,46 @@
+form .form-wrapper {
+  display: flex;
+}
+
+form .form-wrapper input {
+  border: none;
+  padding: 10px;
+  font-size: 1.2rem;
+  margin: 0 10px;
+  border-radius: 5px;
+}
+form .form-wrapper .number {
+  width: 7rem;
+}
+form .form-wrapper .odd,
+.win {
+  color: var(--number-green);
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+form .form-wrapper input[type="submit"] {
+  background-color: #33bbd9;
+  font-weight: 600;
+  color: #fff;
+  padding: 0 20px;
+}
+
+.kelly {
+  margin: 20px 10px;
+  display: block;
+  color: #fff;
+  font-size: 1.3rem;
+  line-height: 2.5rem;
+}
+
+.kelly button {
+  cursor: pointer;
+  background-color: var(--number-green);
+  font-weight: 600;
+  font-size: 1.3rem;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+}

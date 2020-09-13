@@ -1,10 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
 
 :root {
-  --bg-green: #2A873F;
-  --bg-blue: #0F1D4F;
-  --balance-green: #62E524;
+  --bg-green: #2a873f;
+  --bg-blue: #0f1d4f;
+  --balance-green: #62e524;
+  --balance-red: #d83131;
+  --number-green: #3bb700;
 }
 
 body {

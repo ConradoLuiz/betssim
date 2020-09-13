@@ -1,6 +1,17 @@
 <div class="betStrat">
   <app-header [strategy]="this.strategy"></app-header>
   <main>
-    <h2>Bets coming soon...</h2>
+    <app-add-bet
+      [strategy]="this.strategy"
+      (addBet)="addBet($event)"
+    ></app-add-bet>
+    <section>
+      <h3>Your Bets</h3>
+      <div *ngFor="let bet of bets" class="bet">
+        <h3>
+          {{ bet.title }}
+        </h3>
+      </div>
+    </section>
   </main>
 </div>

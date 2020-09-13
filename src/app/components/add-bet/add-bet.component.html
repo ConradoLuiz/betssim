@@ -1,0 +1,57 @@
+<div>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-wrapper">
+      <input type="text" placeholder="Bet" name="title" [(ngModel)]="title" />
+      <input type="text" placeholder="Event" name="event" [(ngModel)]="event" />
+
+      <input
+        type="text"
+        class="odd win number"
+        placeholder="Win odds"
+        name="odd"
+        [(ngModel)]="odd"
+      />
+      <input
+        type="text"
+        class="number"
+        placeholder="Probability of win"
+        name="probability"
+        [(ngModel)]="probability"
+      />
+      <input
+        type="text"
+        class="number"
+        placeholder="Stake"
+        name="stake"
+        [(ngModel)]="stake"
+      />
+      <input type="submit" value="Place Bet" />
+    </div>
+  </form>
+
+  <div *ngIf="odd && probability" class="kelly">
+    <h4>Kelly Criterion = {{ getKelly() | number: "1.0-4" }}</h4>
+    <p *ngIf="kelly <= 0; else showWager">
+      According to the Kelly criterion, you should
+      <strong>
+        not
+      </strong>
+      place a wager.
+    </p>
+    <ng-template #showWager>
+      <div>
+        <p>
+          According to the Kelly criterion, you should place a wager of
+          <strong>
+            {{ kelly | percent }}
+          </strong>
+          of your balance on this bet.
+        </p>
+        <h4>This equates to {{ kelly * strategy.balance | currency }}</h4>
+        <button (click)="putKellyStake()">
+          {{ kelly * strategy.balance | currency }} Stake
+        </button>
+      </div>
+    </ng-template>
+  </div>
+</div>
