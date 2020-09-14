@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Bet } from '../models/Bet';
+import { Bet, BetState } from '../models/Bet';
 import { Strategy } from '../models/Strategy';
 
 @Injectable({
@@ -20,13 +20,43 @@ export class BetService {
     return this.bets.filter((b) => b.id === id)[0];
   }
 
-  placeBet(bet: Bet) {
-    window.localStorage.setItem('_bs', JSON.stringify([bet, ...this.bets]));
-    this.bets.push(bet);
+  placeBet(bet: Bet): Bet[] {
+    this.bets.unshift(bet);
+    this.saveBets();
+    return this.getBets(bet.strategyId);
   }
 
-  winBet(id: string) {
-    const newBet = this.bets.filter((b) => b.id === id)[0];
-    this.bets = [...this.bets, Object.assign(newBet, { state: 'w' })];
+  winBet(bet: Bet) {
+    this.bets = this.bets.map((b) =>
+      b.id === bet.id ? Object.assign(b, { state: BetState.WON }) : b
+    );
+    this.saveBets();
+    return this.getBets(bet.strategyId);
+  }
+
+  loseBet(bet: Bet) {
+    this.bets = this.bets.map((b) =>
+      b.id === bet.id ? Object.assign(b, { state: BetState.LOST }) : b
+    );
+    this.saveBets();
+    return this.getBets(bet.strategyId);
+  }
+
+  removeBet(bet: Bet) {
+    this.bets = this.bets.filter((b) => b.id !== bet.id);
+    this.saveBets();
+    return this.getBets(bet.strategyId);
+  }
+
+  revertBet(bet: Bet) {
+    this.bets = this.bets.map((b) =>
+      b.id === bet.id ? Object.assign(b, { state: BetState.HOLD }) : b
+    );
+    this.saveBets();
+    return this.getBets(bet.strategyId);
+  }
+
+  private saveBets() {
+    window.localStorage.setItem('_bs', JSON.stringify(this.bets));
   }
 }

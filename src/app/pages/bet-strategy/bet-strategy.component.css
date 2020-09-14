@@ -21,16 +21,3 @@ section h3 {
   color: #fff;
   margin: 10px 0;
 }
-
-.bet {
-  width: 100%;
-  background: #fff;
-  border-radius: 5px;
-  padding: 20px;
-  color: #000;
-}
-
-.bet h3 {
-  font-size: 1.3rem;
-  color: #000;
-}

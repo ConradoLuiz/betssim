@@ -20,6 +20,7 @@ form .form-wrapper .odd,
 }
 
 form .form-wrapper input[type="submit"] {
+  cursor: pointer;
   background-color: #33bbd9;
   font-weight: 600;
   color: #fff;

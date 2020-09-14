@@ -5,8 +5,10 @@
   <h2>{{ this.strategy.name }}</h2>
   <div>
     Balance:
-    <h3>
-      {{ this.strategy.balance | currency }}
-    </h3>
+    <h3>$</h3>
+    <ng9-odometer
+      [number]="this.strategy.balance"
+      [config]="{ animation: 'count' }"
+    ></ng9-odometer>
   </div>
 </header>

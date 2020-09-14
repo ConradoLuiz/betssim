@@ -7,8 +7,8 @@ import { BetService } from 'src/app/services/bet.service';
 
 @Component({
   selector: 'app-bet-strategie',
-  templateUrl: './bet-strategie.component.html',
-  styleUrls: ['./bet-strategie.component.css'],
+  templateUrl: './bet-strategy.component.html',
+  styleUrls: ['./bet-strategy.component.css'],
 })
 export class BetStrategyComponent implements OnInit {
   strategy: Strategy;
@@ -29,7 +29,23 @@ export class BetStrategyComponent implements OnInit {
   }
 
   addBet(bet: Bet) {
-    this.betService.placeBet(bet);
-    this.bets.unshift(bet);
+    this.bets = this.betService.placeBet(bet);
+    this.strategyService.registerBet(bet);
+  }
+
+  winBet(bet: Bet) {
+    this.betService.winBet(bet);
+    this.strategyService.registerWin(bet);
+  }
+
+  loseBet(bet: Bet) {
+    this.betService.loseBet(bet);
+  }
+
+  removeBet(bet: Bet) {
+    this.bets = this.betService.removeBet(bet);
+  }
+  revertBet(bet: Bet) {
+    this.bets = this.betService.revertBet(bet);
   }
 }

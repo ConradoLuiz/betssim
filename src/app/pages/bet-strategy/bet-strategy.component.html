@@ -7,11 +7,14 @@
     ></app-add-bet>
     <section>
       <h3>Your Bets</h3>
-      <div *ngFor="let bet of bets" class="bet">
-        <h3>
-          {{ bet.title }}
-        </h3>
-      </div>
+      <app-bet
+        *ngFor="let bet of bets"
+        [bet]="bet"
+        (winBet)="winBet($event)"
+        (loseBet)="loseBet($event)"
+        (removeBet)="removeBet($event)"
+        (revertBet)="revertBet($event)"
+      ></app-bet>
     </section>
   </main>
 </div>

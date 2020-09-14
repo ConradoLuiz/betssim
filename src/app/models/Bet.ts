@@ -8,8 +8,9 @@ export class Bet {
   strategyId: string;
   title: string;
   event: string;
-  odd: Number;
-  stake: Number;
+  odd: number;
+  stake: number;
   state: BetState;
-  probability?: Number;
+  probability?: number;
+  date: number;
 }

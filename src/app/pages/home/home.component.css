@@ -45,6 +45,7 @@ main .cards .card {
 }
 main .cards div {
   display: flex;
+  align-items: center;
 }
 main .cards div h3 + h3 {
   margin: 0 10px;
@@ -52,4 +53,27 @@ main .cards div h3 + h3 {
 
 main .cards .balance {
   color: var(--number-green);
+}
+
+.new-strat {
+  opacity: 0.8;
+}
+.create-strat-form {
+  text-align: center;
+}
+
+.create-strat-input {
+  display: block;
+  margin: 20px;
+}
+
+.create-strat-form input[type="submit"] {
+  cursor: pointer;
+  background-color: var(--number-green);
+  font-weight: 600;
+  font-size: 1.3rem;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
 }

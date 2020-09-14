@@ -6,6 +6,16 @@
   <main>
     <h2>Strategies</h2>
     <div class="cards">
+      <p-card (click)="createStrat()" class="card new-strat">
+        <div>
+          <i
+            class="pi pi-plus-circle"
+            style="font-size: 2rem; margin: 0 10px"
+          ></i>
+          <h3>Create strategy</h3>
+        </div>
+      </p-card>
+
       <p-card
         *ngFor="let s of strategies"
         header="{{ s.name }}"
@@ -25,4 +35,34 @@
       </p-card>
     </div>
   </main>
+  <p-dialog
+    header="Create new strategy"
+    [(visible)]="this.newStratModal"
+    [draggable]="false"
+    [modal]="true"
+  >
+    <form (ngSubmit)="createNewStrat()" class="create-strat-form">
+      <input
+        pInputText
+        type="text"
+        name="strategyName"
+        class="create-strat-input"
+        [(ngModel)]="this.strategyName"
+        placeholder="Strategy name"
+      />
+
+      <p-inputNumber
+        placeholder="Starting balance"
+        [(ngModel)]="this.strategyBalance"
+        inputId="currency-us"
+        mode="currency"
+        name="strategyBalance"
+        currency="USD"
+        locale="en-US"
+        class="create-strat-input"
+      ></p-inputNumber>
+
+      <input type="submit" value="Create" />
+    </form>
+  </p-dialog>
 </div>

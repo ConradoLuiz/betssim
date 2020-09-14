@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
-import { BetStrategyComponent } from './pages/bet-strategie/bet-strategie.component';
+import { BetStrategyComponent } from './pages/bet-strategy/bet-strategy.component';
 
 const routes: Routes = [
   {

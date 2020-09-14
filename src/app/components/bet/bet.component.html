@@ -1,0 +1,41 @@
+<div class="bet">
+  <div class="bet-info">
+    <h3>
+      {{ bet.title }}
+    </h3>
+    <span>
+      {{ bet.date | date }}
+    </span>
+  </div>
+  <div class="bet-event">
+    {{ bet.event }}
+  </div>
+  <div class="bet-stats">
+    <div *ngIf="bet.probability" class="stat prob">
+      <h4>Probability</h4>
+      <h4>{{ bet.probability | percent }}</h4>
+    </div>
+    <div class="stat stake">
+      <h4>Stake</h4>
+      <h4>{{ bet.stake | currency }}</h4>
+    </div>
+    <div class="stat odd">
+      <h4>Odd</h4>
+      <h4>{{ bet.odd }}</h4>
+    </div>
+    <div class="stat gain">
+      <h4>Gain</h4>
+      <h4 class="bet-gain">{{ bet.stake * bet.odd | currency }}</h4>
+    </div>
+  </div>
+  <div class="bet-buttons">
+    <button *ngIf="bet.state != betState.LOST" class="won" (click)="wonBet()">
+      Won
+    </button>
+    <button *ngIf="bet.state != betState.WON" class="lost" (click)="lostBet()">
+      Lost
+    </button>
+    <p-menu #menu [popup]="true" [model]="menuItems"></p-menu>
+    <i class="pi pi-ellipsis-v more-btn" (click)="menu.toggle($event)"></i>
+  </div>
+</div>

@@ -1,0 +1,66 @@
+.bet {
+  width: 100%;
+  background: #fff;
+  border-radius: 5px;
+  padding: 20px 40px;
+  color: #000;
+
+  display: grid;
+  grid-template-columns: 21% 20% 43% 16%;
+  align-items: center;
+  margin: 20px;
+}
+
+.bet h3 {
+  font-size: 1.3rem;
+  color: #000;
+}
+
+.bet-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 7.4rem);
+}
+
+.bet-stats .prob {
+  grid-column: 1;
+}
+
+.bet-stats .stake {
+  grid-column: 2;
+}
+
+.bet-stats .odd {
+  grid-column: 3;
+}
+
+.bet-stats .gain {
+  grid-column: 4;
+}
+
+.bet-buttons {
+  justify-self: end;
+
+  display: flex;
+  align-items: center;
+}
+.bet-buttons button {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin: 0 5px;
+}
+
+.bet-buttons .won {
+  background-color: var(--number-green);
+}
+.bet-buttons .lost {
+  background-color: var(--balance-red);
+}
+
+.bet-buttons .more-btn {
+  cursor: pointer;
+}

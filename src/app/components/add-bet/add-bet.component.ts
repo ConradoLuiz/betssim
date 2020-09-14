@@ -26,6 +26,13 @@ export class AddBetComponent implements OnInit {
   ngOnInit(): void {}
 
   onSubmit() {
+    if (!this.title || !this.event || !this.stake || !this.odd) {
+      return;
+    }
+    if (this.stake > this.strategy.balance) {
+      return;
+    }
+
     const newBet: Bet = {
       id: uuidv4(),
       strategyId: this.strategy.id,
@@ -35,9 +42,16 @@ export class AddBetComponent implements OnInit {
       odd: parseFloat(this.odd),
       probability: parseFloat(this.probability),
       state: BetState.HOLD,
+      date: Date.now(),
     };
 
     this.addBet.emit(newBet);
+
+    this.title = '';
+    this.event = '';
+    this.stake = '';
+    this.odd = '';
+    this.probability = '';
   }
 
   getKelly(): number {
@@ -49,6 +63,7 @@ export class AddBetComponent implements OnInit {
   }
 
   putKellyStake() {
-    this.stake = this.kelly * this.strategy.balance;
+    const stake = this.kelly * this.strategy.balance;
+    this.stake = Math.round((stake + Number.EPSILON) * 100) / 100;
   }
 }
