@@ -35,7 +35,7 @@
     <button *ngIf="bet.state != betState.WON" class="lost" (click)="lostBet()">
       Lost
     </button>
-    <p-menu #menu [popup]="true" [model]="menuItems"></p-menu>
+    <p-menu #menu [popup]="true" [model]="menuItems" appendTo="body"></p-menu>
     <i class="pi pi-ellipsis-v more-btn" (click)="menu.toggle($event)"></i>
   </div>
 </div>
