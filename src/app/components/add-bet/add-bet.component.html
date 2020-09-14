@@ -1,4 +1,4 @@
-<div>
+<div class="addbet-wrapper">
   <form (ngSubmit)="onSubmit()">
     <div class="form-wrapper">
       <input type="text" placeholder="Bet" name="title" [(ngModel)]="title" />
@@ -33,9 +33,7 @@
     <h4>Kelly Criterion = {{ getKelly() | number: "1.0-4" }}</h4>
     <p *ngIf="kelly <= 0; else showWager">
       According to the Kelly criterion, you should
-      <strong>
-        not
-      </strong>
+      <strong> not </strong>
       place a wager.
     </p>
     <ng-template #showWager>

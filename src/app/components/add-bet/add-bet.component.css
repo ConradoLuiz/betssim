@@ -45,3 +45,25 @@ form .form-wrapper input[type="submit"] {
   padding: 10px 20px;
   border-radius: 5px;
 }
+
+@media (max-width: 750px) {
+  .addbet-wrapper {
+    width: 90vw;
+  }
+  form .form-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  form .form-wrapper input {
+    margin: 10px 0;
+  }
+
+  form .form-wrapper input[type="submit"] {
+    padding: 10px 20px;
+  }
+
+  .kelly {
+    margin: 0;
+  }
+}

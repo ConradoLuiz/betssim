@@ -33,3 +33,21 @@ header div h3 {
   display: inline;
   /* margin: 0 0 0 10px; */
 }
+
+@media (max-width: 750px) {
+  header {
+    display: block;
+  }
+
+  header img {
+    width: 100%;
+  }
+
+  header h2 {
+    padding: 10px;
+  }
+
+  header div {
+    text-align: center;
+  }
+}

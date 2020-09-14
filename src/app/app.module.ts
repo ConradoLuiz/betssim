@@ -4,6 +4,8 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { Ng9OdometerModule } from 'ng9-odometer';
 
+import { ResponsiveModule } from 'ngx-responsive';
+
 import { CardModule } from 'primeng/card';
 import { OrderListModule } from 'primeng/orderlist';
 import { MenuModule } from 'primeng/menu';
@@ -43,6 +45,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     DialogModule,
     InputNumberModule,
     InputTextModule,
+    ResponsiveModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

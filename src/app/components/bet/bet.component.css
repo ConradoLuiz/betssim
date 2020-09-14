@@ -64,3 +64,29 @@
 .bet-buttons .more-btn {
   cursor: pointer;
 }
+
+@media (max-width: 750px) {
+  .bet {
+    display: flex;
+    flex-direction: column;
+    min-height: 330px;
+    justify-content: space-around;
+    margin: 20px 0;
+    align-items: unset;
+  }
+
+  .bet .bet-stats {
+    display: grid;
+
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+  }
+
+  .bet-stats .stat {
+    grid-column: unset !important;
+  }
+
+  .bet-buttons {
+    align-self: center;
+  }
+}
