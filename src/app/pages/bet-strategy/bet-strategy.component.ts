@@ -34,18 +34,18 @@ export class BetStrategyComponent implements OnInit {
   }
 
   winBet(bet: Bet) {
-    this.betService.winBet(bet);
+    this.bets = this.betService.winBet(bet);
     this.strategyService.registerWin(bet);
   }
 
   loseBet(bet: Bet) {
-    this.betService.loseBet(bet);
+    this.bets = this.betService.loseBet(bet);
   }
 
   removeBet(bet: Bet) {
-    this.bets = this.betService.removeBet(bet);
+    this.bets = this.bets = this.betService.removeBet(bet);
   }
   revertBet(bet: Bet) {
-    this.bets = this.betService.revertBet(bet);
+    this.bets = this.bets = this.betService.revertBet(bet);
   }
 }
