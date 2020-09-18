@@ -30,7 +30,7 @@
           </h3>
         </div>
         <h3>
-          {{ (s.balance / s.startingBalance - 1) * 100 | percent }}
+          {{ s.balance / s.startingBalance - 1 | percent: ".2" }}
         </h3>
       </p-card>
     </div>

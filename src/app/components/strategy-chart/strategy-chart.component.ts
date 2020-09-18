@@ -82,7 +82,6 @@ export class StrategyChartComponent implements OnInit {
       series.push(nextBalance);
       betsLabels.push(bet.title);
     }
-    console.log(series);
 
     return [series, betsLabels];
   }
