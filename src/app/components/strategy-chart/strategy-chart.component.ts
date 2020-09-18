@@ -66,11 +66,12 @@ export class StrategyChartComponent implements OnInit {
   }
 
   private buildSeries(startingBalance, bets: Bet[]) {
+    const betsReversed = [].concat(bets).reverse();
     const series = [startingBalance];
     const betsLabels = ['Starting Balance'];
 
-    for (let i = 1; i <= bets.length; i++) {
-      const bet = bets[i - 1];
+    for (let i = 1; i <= betsReversed.length; i++) {
+      const bet = betsReversed[i - 1];
 
       let nextBalance;
       if (bet.state == BetState.LOST) nextBalance = series[i - 1] - bet.stake;
