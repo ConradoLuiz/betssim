@@ -14,6 +14,8 @@ import { DialogModule } from 'primeng/dialog';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { InputTextModule } from 'primeng/inputtext';
 
+import { ChartModule } from 'primeng/chart';
+
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -21,6 +23,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { BetStrategyComponent } from './pages/bet-strategy/bet-strategy.component';
 import { AddBetComponent } from './components/add-bet/add-bet.component';
 import { BetComponent } from './components/bet/bet.component';
+import { StrategyChartComponent } from './components/strategy-chart/strategy-chart.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
@@ -31,6 +34,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BetStrategyComponent,
     AddBetComponent,
     BetComponent,
+    StrategyChartComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,6 +50,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     InputNumberModule,
     InputTextModule,
     ResponsiveModule,
+    ChartModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

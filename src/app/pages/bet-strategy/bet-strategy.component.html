@@ -5,6 +5,10 @@
       [strategy]="this.strategy"
       (addBet)="addBet($event)"
     ></app-add-bet>
+    <app-strategy-chart
+      [strategy]="strategy"
+      [bets]="bets"
+    ></app-strategy-chart>
     <section>
       <h3>Your Bets</h3>
       <app-bet
